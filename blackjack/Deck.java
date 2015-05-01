@@ -1,6 +1,5 @@
 package blackjack;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import libWish.Randoms;
@@ -14,8 +13,8 @@ public class Deck<T extends Card> {
 	private List<T> cards; //All cards, include dealt or not
 	private int dealtIndex = 0; // At the beginning, all the cards are not dealt.
 	
-	public void setDeckOfCards(ArrayList<T> deckOfCards) {
-		this.cards = deckOfCards;
+	public void setCards(List<T> cards) {
+		this.cards = cards;
 	}
 	
 	/**
@@ -25,10 +24,10 @@ public class Deck<T extends Card> {
 		for (int i = 0; i < cards.size(); i++){
 			//exchange card i with the random card from i to cards.size() - 1
 			int j = Randoms.randomIntInRange(i, cards.size() - 1);
-			T cardA = cards.get(i);
-			T cardB = cards.get(j);
-			cards.set(i, cardA);
-			cards.set(j, cardB);
+			T c1 = cards.get(i);
+			T c2 = cards.get(j);
+			cards.set(i, c2);
+			cards.set(j, c1);
 		}
 	}
 	
@@ -40,23 +39,23 @@ public class Deck<T extends Card> {
 	 * @param number: number of players
 	 * @return array of cards of size number 
 	 */
-	public T[] dealHand(int number) {
+	public T[] dealCards(int number) {
 		if (remainingCards() < number) {
 			return null;
 		}
 		
 		@SuppressWarnings("unchecked")
-		T[] hand = (T[]) new Card[number];
+		T[] resCards = (T[]) new Card[number];
 		int count = 0;
 		while (count < number) {
 			T card = dealCard();
 			if (card != null) {
-				hand[count] = card;
+				resCards[count] = card;
 				count++;
 			}
 		}
 		
-		return hand;
+		return resCards;
 	}
 	
 	public T dealCard() {

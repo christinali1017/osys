@@ -36,17 +36,20 @@ public abstract class Card {
 	
 	public void print() {
 		String[] values = {"A", "1", "2","3", "4", "5", "6", "7", "8", "9", "J", "Q", "K" }; 
-		System.out.print(values[value-1]);
+		System.out.print(values[value-1] + " ");
 		switch (suit) {
 			case Club:
 				System.out.print("club");
+				break;
 			case Heart:
 				System.out.print("heart");
+				break;
 			case Spade:
 				System.out.print("Spade");
+				break;
 			case Diamond:
 				System.out.print("Diamond");
-				
+				break;	
 		}
 		System.out.print(" ");
 	}

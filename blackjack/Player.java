@@ -8,10 +8,10 @@ import java.util.List;
  * Player
  * @author wish
  */
-public class Hand<T extends Card> {
+public class Player<T extends Card> {
 	protected List<T> cards = new ArrayList<T>();
 	
-	public Hand() {}
+	public Player() {}
 	
 	public int score() {
 		int score = 0;

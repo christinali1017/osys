@@ -17,7 +17,7 @@ public enum Suit {
 		return value;
 	}
 	
-	public static Suit getSuitFromValue(int value) {
+	public static Suit getSuit(int value) {
 		switch (value) {
 			case 0:
 				return Suit.Club;

@@ -4,23 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * BlackJack hand
- * Ace A could be 1 or 11
+ * BlackJack player
  * @author wish
  */
-public class BlackJackHand extends Hand<BlackJackCard> {
-	public BlackJackHand() {}
+public class BlackJackPlayer extends Player<BlackJackCard> {
+	public BlackJackPlayer() {}
 	
 	/**
 	 * Return the score of blackjack
 	 * A could be 1 or 11, thus there are multiple possible scores for a blackjack hand,
 	 * We return to return the highest that is under 21
 	 * @return score
+	 * 
+	 * Be careful, we need to calculate the scores every time other than just add the last card, 
+	 * because every time ace can act as 1 or 11.
 	 */
 	public int score() {
 		List<Integer> scores = possibleScores();
-		int low = Integer.MIN_VALUE;
-		int high = Integer.MAX_VALUE;
+		int low = Integer.MIN_VALUE;   // low is <= 21
+		int high = Integer.MAX_VALUE;  // high is always greater than 21
 		for(int score : scores) {
 			if(score > 21 && score < high) {
 				high = score;
@@ -28,7 +30,9 @@ public class BlackJackHand extends Hand<BlackJackCard> {
 				low = score;
 			}
 		}
-		return low <= 21 ? low: high;	
+		
+		//is low is not Min_VALUE, then we should return low, because high is over 21, already busted
+		return low ==  Integer.MIN_VALUE ? high: low;	
 	}
 	
 	/**
@@ -58,7 +62,7 @@ public class BlackJackHand extends Hand<BlackJackCard> {
 			int score = scores.get(i);
 			scores.set(i, score + card.minValue());
 			if (card.minValue() != card.maxValue()) {
-				scores.add(score, card.maxValue());
+				scores.add(score + card.maxValue());
 			}
 		}
 	}
@@ -84,9 +88,9 @@ public class BlackJackHand extends Hand<BlackJackCard> {
 			return false;
 		}
 		
-		BlackJackCard cardA = cards.get(0);
-		BlackJackCard cardB = cards.get(1);
+		BlackJackCard c1 = cards.get(0);
+		BlackJackCard c2 = cards.get(1);
 		
-		return ((cardA.isAce() && cardB.isFaceCard()) || (cardA.isFaceCard() && cardB.isAce()));
+		return ((c1.isAce() && c2.isFaceCard()) || (c1.isFaceCard() && c2.isAce()));
 	}
 }
