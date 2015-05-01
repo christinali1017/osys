@@ -1,4 +1,4 @@
-package libWish;
+package lib;
 
 public class LinkedListNode {
 	public int val;

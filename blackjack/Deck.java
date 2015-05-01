@@ -2,7 +2,7 @@ package blackjack;
 
 import java.util.List;
 
-import libWish.Randoms;
+import lib.Randoms;
 
 /**
  * A Deck with generics but restricted the type of T to card.

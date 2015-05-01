@@ -1,4 +1,4 @@
-package libWish;
+package lib;
 
 /**
  * Random functions
