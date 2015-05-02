@@ -67,14 +67,6 @@ public class BlackJackPlayer extends Player<BlackJackCard> {
 		}
 	}
 	
-	
-	/**
-	 * @return if score reaches 21
-	 */
-	public boolean is21() {
-		return score() == 21;
-	}
-	
 	/**
 	 * Check if it is over 21
 	 * @return
