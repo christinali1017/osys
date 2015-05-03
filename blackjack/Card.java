@@ -6,7 +6,7 @@ package blackjack;
  */
 public abstract class Card {
 	/* Check if the card is available to be given out to someone */
-	private boolean available = true;
+//	private boolean available = true;
 	
 	protected int value;
 	protected Suit suit;
@@ -22,17 +22,17 @@ public abstract class Card {
 		return suit;
 	}
 	
-	public boolean isAvailable() {
-		return available;
-	}
-	
-	public void markUnavailable() {
-		available = false;
-	}
-	
-	public void markAvailable() {
-		available = true;
-	}
+//	public boolean isAvailable() {
+//		return available;
+//	}
+//	
+//	public void markUnavailable() {
+//		available = false;
+//	}
+//	
+//	public void markAvailable() {
+//		available = true;
+//	}
 	
 	public void print() {
 		String[] values = {"A", "1", "2","3", "4", "5", "6", "7", "8", "9", "J", "Q", "K" }; 

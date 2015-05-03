@@ -64,7 +64,7 @@ public class Deck<T extends Card> {
 		}
 		
 		T card = cards.get(dealtIndex);
-		card.markUnavailable();
+//		card.markUnavailable();
 		dealtIndex++;
 		
 		return card;
