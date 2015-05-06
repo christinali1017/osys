@@ -14,7 +14,7 @@ See javadoc on this link [Javadoc](http://wishyouhappy.github.io/osys/doc/index.
 
 -run test.java
 
-
+<pre>
 -----------Initialize------------
 Player 0 15 K Spade 4 Diamond 
 Player 1 16 6 club 8 heart 
@@ -30,7 +30,7 @@ Player 3 18 7 club Q club
 Player 4 24 A Diamond 2 Diamond A Spade 8 club 9 heart 
 ---------------------------------
 Winners: Player 0 
-
+</pre>
 
 #### 2. Call Center
 
@@ -45,6 +45,7 @@ Winners: Player 0
 - Create call instances
 - run test.java
 
+<pre>
 Call A is dispatched to Fresher 0
 Call A is being handling
 Call B is dispatched to Fresher 1
@@ -81,7 +82,7 @@ Call K is hung up
 Call L is hung up
 Call I is hung up
 Call J is hung up
-
+</pre>
 
 
 	
