@@ -68,7 +68,7 @@ public class Call {
 	 */
 	public void hangUp() {
 		//TODO
-		System.out.println("Call is hung up");
+		System.out.println("Call " + caller.getName() + " is hung up");
 	}
 	
 

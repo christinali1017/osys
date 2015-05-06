@@ -120,7 +120,6 @@ public class CallDispatcher {
 						return;
 					}
 					Employee handler = getHandler(c);
-					System.out.println("handler is " + handler);
 					if (handler != null) {
 						handler.handleCall(c);
 						c.setHandler(handler);
@@ -130,7 +129,6 @@ public class CallDispatcher {
 			}
 		});
 		t.start();
-		System.out.println("call length: " + getTotalCalls());
 	}
 	
 	/**
@@ -171,7 +169,6 @@ public class CallDispatcher {
 				return true;
 			}
 		}
-		System.out.println("No call to handle");
 		return false;
 	}
 	

@@ -44,13 +44,22 @@ public abstract class Employee {
 	public void handleCall(Call c) {
 		System.out.println("Call " + c.getCaller().getName() + " is being handling");
 		this.call = c;
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		c.hangUp();
+		
+		Thread t = new Thread(new Runnable(){
+			@Override
+			public void run() {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				finishCall();
+			}
+				
+		});
+		
+		t.start();
 	}
 	
 	/**

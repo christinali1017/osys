@@ -14,10 +14,10 @@ public class Test {
 		Call c6 = new Call(new Caller("F", "6"));
 		Call c7 = new Call(new Caller("G", "7"));
 		Call c8 = new Call(new Caller("H", "8"));
-		Call c9 = new Call(new Caller("E", "10"));
-		Call c10 = new Call(new Caller("F", "11"));
-		Call c11= new Call(new Caller("G", "12"));
-		Call c12 = new Call(new Caller("H", "13"));
+		Call c9 = new Call(new Caller("I", "10"));
+		Call c10 = new Call(new Caller("J", "11"));
+		Call c11= new Call(new Caller("K", "12"));
+		Call c12 = new Call(new Caller("L", "13"));
 		
 		callDispatcher.dispatchCall(c1);
 		callDispatcher.dispatchCall(c2);
