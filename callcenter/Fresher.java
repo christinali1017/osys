@@ -1,5 +1,7 @@
 package callcenter;
 
-public class Fresher {
-
+public class Fresher extends Employee {
+	public Fresher() {
+		level = Level.Fresher;
+	}
 }

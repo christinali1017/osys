@@ -12,7 +12,7 @@ public abstract class Employee {
 	/**
 	 * Employee type
 	 */
-	protected Type type;
+	protected Level level;
 	
 	/**
 	 * Current call, if call is null, then indicated that the employee is free
@@ -26,8 +26,8 @@ public abstract class Employee {
 	/**
 	 * @return Employee type
 	 */
-	public Type getType() {
-		return type;
+	public Level getLevel() {
+		return level;
 	}
 	
 	/**

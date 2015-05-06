@@ -8,7 +8,7 @@ package callcenter;
  * Three types of employees Fresher, Technical Leader(TL), Product Manager(PM) 
  * @author wish
  */
-public enum Type {
+public enum Level {
 	/**
 	 * Fresher, Technical Leader(TL), Product Manager(PM)
 	 */
@@ -16,7 +16,7 @@ public enum Type {
 	
 	private int value;
 	
-	private Type(int v) {
+	private Level(int v) {
 		this.value = v;
 	}
 	

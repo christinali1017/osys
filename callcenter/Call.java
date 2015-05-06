@@ -2,15 +2,15 @@ package callcenter;
 
 
 /**
+ * Calls are first assigned to the employees who can handle it. 
  * @author wish
- *
  */
 public class Call {
 	
 	/**
 	 * Type of employee handle the call
 	 */
-	private Type type;
+	private Level type;
 	
 	/**
 	 * Person who call 
@@ -29,14 +29,14 @@ public class Call {
 	 */
 	public Call(Caller c) {
 		this.caller = c;
-		this.type = Type.Fresher;
+		this.type = Level.Fresher;
 	}
 	
-	public Type getType() {
+	public Level getLevel() {
 		return type;
 	}
 	
-	public void setType(Type t) {
+	public void setLevel(Level t) {
 		this.type = t;
 	}
 	
@@ -51,11 +51,11 @@ public class Call {
 	public Caller getCaller() {
 		return this.caller;
 	}
-	public Type escalateType() {
-		if (type == Type.Fresher) {
-			type = Type.TechnicalLeader;
-		} else if (type == Type.TechnicalLeader) {
-			type = Type.Manager;
+	public Level escalateType() {
+		if (type == Level.Fresher) {
+			type = Level.TechnicalLeader;
+		} else if (type == Level.TechnicalLeader) {
+			type = Level.Manager;
 		}
 		
 		//if type is manager, can not escalate anymore
@@ -68,6 +68,7 @@ public class Call {
 	 */
 	public void hangUp() {
 		//TODO
+		System.out.println("Call is hung up");
 	}
 	
 
