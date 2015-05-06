@@ -24,5 +24,18 @@ public enum Level {
 		return value;
 	}
 	
+	public String toString(int value) {
+		switch(value) {
+			case 0 :
+				return "Fresher";
+			case 1:
+				return "Techinical Lead";
+			case 2:
+				return "Manager";
+			default:
+				return "";
+		}
+	}
+	
 	
 }

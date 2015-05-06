@@ -51,7 +51,7 @@ public class Call {
 	public Caller getCaller() {
 		return this.caller;
 	}
-	public Level escalateType() {
+	public Level escalateLevel() {
 		if (type == Level.Fresher) {
 			type = Level.TechnicalLeader;
 		} else if (type == Level.TechnicalLeader) {

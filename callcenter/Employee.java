@@ -42,7 +42,26 @@ public abstract class Employee {
 	 * Handle new Call. 
 	 */
 	public void handleCall(Call c) {
+		System.out.println("Call " + c.getCaller().getName() + " is being handling");
 		this.call = c;
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		c.hangUp();
+	}
+	
+	/**
+	 * When employee finishes a call, pick up a new call in queue
+	 */
+	public boolean pickupNewCall() {
+		if (call == null) {
+			CallDispatcher.getInstance().handleCall(this);
+			return true;
+		}
+		return false;
 	}
 	
 	/**
@@ -51,6 +70,28 @@ public abstract class Employee {
 	 * Technical Leader should escalate to the Product manager
 	 */
 	public void escalate() {
-		//TODO
+		if (call != null) {
+			call.escalateLevel();
+			CallDispatcher.getInstance().dispatchCall(call);
+			call = null;
+		}
+		CallDispatcher.getInstance().handleCall(this);
 	}
+	
+	/**
+	 * Finish and disconnect current call. 
+	 */
+	public void finishCall() {
+		/*set current call to null*/
+		if (call != null) {
+			call.hangUp();
+			call = null;
+		}
+		
+		/*pick up new call, if there are calls in queue*/
+		CallDispatcher.getInstance().handleCall(this);
+		
+	}
+	
+	
 }
