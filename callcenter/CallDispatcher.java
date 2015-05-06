@@ -105,32 +105,32 @@ public class CallDispatcher {
 		c.setHandler(handler);
 	}
 	
-	public void dispatchHoldCall() {
-		Thread t = new Thread(new Runnable(){
-			@Override
-			public void run() {
-				while (getTotalCalls() != 0) {
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					Call c = getCallFromQueue();
-					if (c == null) {
-						return;
-					}
-					Employee handler = getHandler(c);
-					if (handler != null) {
-						handler.handleCall(c);
-						c.setHandler(handler);
-					}
-					
-				}
-			}
-		});
-		t.start();
-	}
-	
+//	public void dispatchHoldCall() {
+//		Thread t = new Thread(new Runnable(){
+//			@Override
+//			public void run() {
+//				while (getTotalCalls() != 0) {
+//					try {
+//						Thread.sleep(1000);
+//					} catch (InterruptedException e) {
+//						e.printStackTrace();
+//					}
+//					Call c = getCallFromQueue();
+//					if (c == null) {
+//						return;
+//					}
+//					Employee handler = getHandler(c);
+//					if (handler != null) {
+//						handler.handleCall(c);
+//						c.setHandler(handler);
+//					}
+//					
+//				}
+//			}
+//		});
+//		t.start();
+//	}
+//	
 	/**
 	 * @param c: call
 	 * @return free handler
